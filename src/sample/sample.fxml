@@ -1,38 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXListView?>
 <?import com.jfoenix.controls.JFXTextArea?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
-
-
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.TextField?>
-<AnchorPane fx:controller="sample.Controller" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B0F5E1;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #B0F5E1;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <JFXListView fx:id="user_list" layoutX="14.0" layoutY="48.0" prefHeight="333.0" prefWidth="200.0" style="-fx-background-color: #5EE4FC; -fx-background-radius: 10px;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="50.0" />
-      <AnchorPane layoutX="20.0" layoutY="9.0" prefHeight="41.0" prefWidth="200.0" style="-fx-background-color: #5EE4FC; -fx-background-radius: 10px;" AnchorPane.bottomAnchor="355.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="380.0" AnchorPane.topAnchor="5.0">
+      <VBox layoutX="228.0" layoutY="14.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="225.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <TextField layoutX="8.0" layoutY="8.0" onKeyReleased="#search_release" prefHeight="24.0" prefWidth="179.0" promptText="search" style="-fx-background-radius: 5px;" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="8.0" />
+            <JFXListView fx:id="chat_list" prefHeight="483.0" prefWidth="365.0" style="-fx-background-color: #5EE4FC; -fx-background-radius: 10px;">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </JFXListView>
+            <HBox alignment="CENTER" maxHeight="100.0" prefHeight="100.0" prefWidth="100.0">
+               <children>
+                  <JFXTextArea fx:id="textarea" prefHeight="56.0" prefWidth="291.0" wrapText="true">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </JFXTextArea>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <ImageView fx:id="file_choose" fitHeight="50.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@folder.png" />
+                           </image>
+                        </ImageView>
+                        <JFXButton layoutX="10.0" layoutY="35.0" onMouseClicked="#send_click" prefHeight="25.0" prefWidth="62.0" style="-fx-background-color: #5EE4FC; -fx-background-radius: 10px;" text="SEND">
+                           <font>
+                              <Font name="System Bold" size="10.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </JFXButton>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
          </children>
-      </AnchorPane>
-      <AnchorPane layoutX="231.0" layoutY="5.0" prefHeight="40.0" prefWidth="358.0" style="-fx-background-color: #5EE4FC; -fx-background-radius: 10px;">
+      </VBox>
+      <VBox prefHeight="400.0" prefWidth="219.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Text fx:id="chat_user" layoutX="18.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chat User Name" textAlignment="CENTER" wrappingWidth="322.7294921875" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="17.2705078125">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-            </Text>
+            <AnchorPane prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #5EE4FC; -fx-background-radius: 10px;">
+               <children>
+                  <TextField layoutX="8.0" layoutY="8.0" onKeyReleased="#search_release" prefHeight="24.0" prefWidth="179.0" promptText="search" style="-fx-background-radius: 5px;" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="8.0" />
+               </children>
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </AnchorPane>
+            <JFXListView fx:id="user_list" prefHeight="541.0" prefWidth="209.0" style="-fx-background-color: #5EE4FC; -fx-background-radius: 10px;">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </JFXListView>
          </children>
-      </AnchorPane>
-      <JFXListView fx:id="chat_list" layoutX="231.0" layoutY="49.0" prefHeight="264.0" prefWidth="358.0" style="-fx-background-color: #5EE4FC; -fx-background-radius: 10px;" />
-      <JFXTextArea fx:id="textarea" layoutX="232.0" layoutY="326.0" prefHeight="50.0" prefWidth="289.0" />
-      <JFXButton layoutX="527.0" layoutY="325.0" onMouseClicked="#send_click" prefHeight="50.0" prefWidth="62.0" style="-fx-background-color: #5EE4FC; -fx-background-radius: 10px;" text="SEND">
-         <font>
-            <Font name="System Bold" size="10.0" />
-         </font>
-      </JFXButton>
+      </VBox>
    </children>
 </AnchorPane>

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="okhttp-5.0.0-alpha.2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/javafx/okhttp-5.0.0-alpha.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
